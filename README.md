@@ -1,6 +1,9 @@
 # bpo-chat-app-api
 - A Chat/Messaging App 
 
+## Build status
+https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop
+
 ## Features
 1. Personal message
 - A user is able to send a personal message to another user
