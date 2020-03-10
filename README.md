@@ -2,7 +2,7 @@
 - A Chat/Messaging App 
 
 ## Build status
-https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop
+[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)
 
 ## Features
 1. Personal message
