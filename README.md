@@ -19,7 +19,7 @@
 
 ### Endpoint details
 | Functionality | Endpoint | HTTP VERB |
-| --- | --- |--- | --- |
+| --- | --- |--- | 
 | User signup | `/api/v1/users/signup/` | POST |
 | User signin |  `/api/v1/users/login/` | POST |
 | User refresh token |  `/api/v1/users/refresh/` | POST |
@@ -28,12 +28,32 @@
 | Send message to chat instance |  `/api/v1/chats/<chat_uri>/messages/` | POST |
 | Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
 
-### Endpoint data types
-- User signup
-No authentication needed
-`{
+### Endpoint data formats
+- User signup  No authentication needed  `{
 	"username":"wali",
 	"email":"wali@email.com",
 	"password":"password123",
 	"password2":"password123"
-}` 
+}`
+
+- User login  No authentication needed  `{
+	"email":"wali@email.com",
+	"password":"password123"
+}`
+
+- User refresh token  Authorization header: Bearer Token + Acess Token from login endpoint  `{
+    "email":"wali@email.com",
+	"password":"password123"   
+}`
+
+- Create chat instance  Authentication needed  `{
+
+}`
+
+- Join chat instance  Authentication needed. Non creator of chat instance joins  `{
+    "username": "wali"
+}`
+
+- Send message to chat instance Authentication needed. Must be a member of chat instance  `{
+    "message": "Hello world"
+}`
