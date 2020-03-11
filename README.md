@@ -17,13 +17,23 @@
 - Django Rest Framework
 - PostgresQL
 
-## How to interact with API
-
-| Functionality | Endpoint | HTTP VERB | Data format |
+### Endpoint details
+| Functionality | Endpoint | HTTP VERB |
 | --- | --- |--- | --- |
-| User signup | `/api/v1/users/signup/` | POST | {
+| User signup | `/api/v1/users/signup/` | POST |
+| User signin |  `/api/v1/users/login/` | POST |
+| User refresh token |  `/api/v1/users/refresh/` | POST |
+| Create a chat instance |  `/api/v1/chats/` | POST |
+| Join a chat instance |  `/api/v1/chats/<chat_uri>` | PATCH |
+| Send message to chat instance |  `/api/v1/chats/<chat_uri>/messages/` | POST |
+| Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
+
+### Endpoint data types
+- User signup
+No authentication needed
+`{
 	"username":"wali",
 	"email":"wali@email.com",
 	"password":"password123",
 	"password2":"password123"
-} | 
+}` 
