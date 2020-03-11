@@ -16,3 +16,14 @@
 - Django
 - Django Rest Framework
 - PostgresQL
+
+## How to interact with API
+
+| Functionality | Endpoint | HTTP VERB | Data format |
+| --- | --- |--- | --- |
+| User signup | `/api/v1/users/signup/` | POST | {
+	"username":"wali",
+	"email":"wali@email.com",
+	"password":"password123",
+	"password2":"password123"
+} | 
