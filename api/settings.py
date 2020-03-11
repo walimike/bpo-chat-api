@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
     'api.apps.authentication',
+    'api.apps.chat',
 ]
 
 MIDDLEWARE = [
