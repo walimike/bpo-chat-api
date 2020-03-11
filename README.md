@@ -32,30 +32,50 @@
 | Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
  
 ### Endpoint data formats
-- User signup<br/>  No authentication needed<br/>  `{<br/>
-	"username":"wali",<br/>
-	"email":"wali@email.com",<br/>
-	"password":"password123",<br/>
-	"password2":"password123"<br/>
-}`
 
-- User login<br/>  No authentication needed<br/>  `{<br/>
-	"email":"wali@email.com",<br/>
-	"password":"password123"<br/>
-}`
+- User signup: No authentication needed
+```
+{
+	"username":"wali",
+	"email":"wali@email.com",
+	"password":"password123",
+	"password2":"password123"
+}
+```
 
-- Join chat instance<br/>  Authentication needed. Non creator of chat instance joins<br/>  `{<br/>
-    "username": "wali"<br/>
-}`
+- User login: No authentication needed
+```
+{
+	"email":"wali@email.com",
+	"password":"password123"
+}
+```
+
+- Create chat instance: Authentication needed
+```
+{ }
+```
+
+- Join chat instance: Authentication needed. Non creator of chat instance joins
+```
+{
+    "username": "wali"
+}
+```
 
 
-- User refresh token<br/>  Authorization header: Bearer Token + Acess Token from login endpoint<br/>  `{<br/>
-    "email":"wali@email.com",<br/>
-	"password":"password123" <br/>  
-}`
+- User refresh token:  Authorization header: Bearer Token + Acess Token from login endpoint
+```
+{
+    "email":"wali@email.com",
+    "password":"password123" 
+}
+```
 
-- Send message to chat instance<br/> Authentication needed. Must be a member of chat instance<br/>  `{<br/>
-    "message": "Hello world"<br/>
-}`
+- Send message to chat instance: Authentication needed. Must be a member of chat instance  
+```
+{
+    "message": "Hello world"
+}
+```
 
-- Create chat instance<br/>  Authentication needed<br/>  `{ }`
