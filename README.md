@@ -19,3 +19,43 @@
 - Django
 - Django Rest Framework
 - PostgresQL
+
+### Endpoint details
+| Functionality | Endpoint | HTTP VERB |
+| --- | --- |--- | 
+| User signup | `/api/v1/users/signup/` | POST |
+| User signin |  `/api/v1/users/login/` | POST |
+| User refresh token |  `/api/v1/users/refresh/` | POST |
+| Create a chat instance |  `/api/v1/chats/` | POST |
+| Join a chat instance |  `/api/v1/chats/<chat_uri>` | PATCH |
+| Send message to chat instance |  `/api/v1/chats/<chat_uri>/messages/` | POST |
+| Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
+
+### Endpoint data formats
+- User signup<br/>  No authentication needed<br/>  `{
+	"username":"wali",
+	"email":"wali@email.com",
+	"password":"password123",
+	"password2":"password123"
+}`
+
+- User login<br/>  No authentication needed<br/>  `{
+	"email":"wali@email.com",
+	"password":"password123"
+}`
+
+- Join chat instance<br/>  Authentication needed. Non creator of chat instance joins<br/>  `{
+    "username": "wali"
+}`
+
+
+- User refresh token<br/>  Authorization header: Bearer Token + Acess Token from login endpoint<br/>  `{
+    "email":"wali@email.com",
+	"password":"password123"   
+}`
+
+- Send message to chat instance<br/> Authentication needed. Must be a member of chat instance<br/>  `{
+    "message": "Hello world"
+}`
+
+- Create chat instance<br/>  Authentication needed<br/>  `{ }`

@@ -3,11 +3,9 @@ cffi==1.14.0
 cryptography==2.8
 Django==3.0.4
 djangorestframework==3.11.0
-djangorestframework-simplejwt==4.4.0
 jwt==0.6.1
 psycopg2==2.8.4
 pycparser==2.20
-PyJWT==1.7.1
 python-decouple==3.3
 pytz==2019.3
 six==1.14.0
