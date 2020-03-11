@@ -13,6 +13,7 @@ before_script:
 
 install:
   - pip install -r requirements.txt
+  - pip install djangorestframework_simplejwt
 
 script:
-    - python manage.py test
+  - python manage.py test
