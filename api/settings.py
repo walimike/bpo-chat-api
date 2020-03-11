@@ -80,10 +80,10 @@ AUTH_USER_MODEL = 'authentication.User'
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
+        'NAME': 'travis_ci_test' if 'TRAVIS' in os.environ else config('DB_NAME'),
+        'USER': '' if 'TRAVIS' in os.environ else config('DB_USER'),
+        'PASSWORD':  '' if 'TRAVIS' in os.environ else config('DB_PASSWORD'),
+        'HOST':  'localhost' if 'TRAVIS' in os.environ else config('DB_HOST'),
         'PORT': '',
     }
 }
