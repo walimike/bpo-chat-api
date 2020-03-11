@@ -2,9 +2,8 @@
 - A Chat/Messaging App 
 
 ## Build status
-[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)  
-[![Maintainability](https://api.codeclimate.com/v1/badges/485ab8670a489a8b4bb4/maintainability)](https://codeclimate.com/github/walimike/bpo-chat-api/maintainability)  
-[![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=add-test-coverage)](https://coveralls.io/github/walimike/bpo-chat-api?branch=add-test-coverage)
+[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)                    [![Maintainability](https://api.codeclimate.com/v1/badges/485ab8670a489a8b4bb4/maintainability)](https://codeclimate.com/github/walimike/bpo-chat-api/maintainability)                           [![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=add-test-coverage)](https://coveralls.io/github/walimike/bpo-chat-api?branch=add-test-coverage)
+
 ## Features
 1. Personal message
 - A user is able to send a personal message to another user
@@ -29,9 +28,9 @@
 | User refresh token |  `/api/v1/users/refresh/` | POST |
 | Create a chat instance |  `/api/v1/chats/` | POST |
 | Join a chat instance |  `/api/v1/chats/<chat_uri>` | PATCH |
-| Send message to chat instance |  `/api/v1/chats/<chat_uri>/messages/` | POST |
+| Send message to chat instance |  `/api/v1/chats/<chat_uri>/messages/` | POST | 
 | Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
-
+ 
 ### Endpoint data formats
 - User signup<br/>  No authentication needed<br/>  `{<br/>
 	"username":"wali",<br/>
