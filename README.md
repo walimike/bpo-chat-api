@@ -2,8 +2,9 @@
 - A Chat/Messaging App 
 
 ## Build status
-[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)
-
+[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)  
+[![Maintainability](https://api.codeclimate.com/v1/badges/485ab8670a489a8b4bb4/maintainability)](https://codeclimate.com/github/walimike/bpo-chat-api/maintainability)  
+[![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=add-test-coverage)](https://coveralls.io/github/walimike/bpo-chat-api?branch=add-test-coverage)
 ## Features
 1. Personal message
 - A user is able to send a personal message to another user
@@ -32,30 +33,30 @@
 | Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
 
 ### Endpoint data formats
-- User signup<br/>  No authentication needed<br/>  `{
-	"username":"wali",
-	"email":"wali@email.com",
-	"password":"password123",
-	"password2":"password123"
+- User signup<br/>  No authentication needed<br/>  `{<br/>
+	"username":"wali",<br/>
+	"email":"wali@email.com",<br/>
+	"password":"password123",<br/>
+	"password2":"password123"<br/>
 }`
 
-- User login<br/>  No authentication needed<br/>  `{
-	"email":"wali@email.com",
-	"password":"password123"
+- User login<br/>  No authentication needed<br/>  `{<br/>
+	"email":"wali@email.com",<br/>
+	"password":"password123"<br/>
 }`
 
-- Join chat instance<br/>  Authentication needed. Non creator of chat instance joins<br/>  `{
-    "username": "wali"
+- Join chat instance<br/>  Authentication needed. Non creator of chat instance joins<br/>  `{<br/>
+    "username": "wali"<br/>
 }`
 
 
-- User refresh token<br/>  Authorization header: Bearer Token + Acess Token from login endpoint<br/>  `{
-    "email":"wali@email.com",
-	"password":"password123"   
+- User refresh token<br/>  Authorization header: Bearer Token + Acess Token from login endpoint<br/>  `{<br/>
+    "email":"wali@email.com",<br/>
+	"password":"password123" <br/>  
 }`
 
-- Send message to chat instance<br/> Authentication needed. Must be a member of chat instance<br/>  `{
-    "message": "Hello world"
+- Send message to chat instance<br/> Authentication needed. Must be a member of chat instance<br/>  `{<br/>
+    "message": "Hello world"<br/>
 }`
 
 - Create chat instance<br/>  Authentication needed<br/>  `{ }`
