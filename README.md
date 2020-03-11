@@ -29,31 +29,30 @@
 | Get messages from chat instance |  `/api/v1/chats/<chat_uri>/messages/` | GET |
 
 ### Endpoint data formats
-- User signup\  No authentication needed\  `{
+- User signup<br/>  No authentication needed<br/>  `{
 	"username":"wali",
 	"email":"wali@email.com",
 	"password":"password123",
 	"password2":"password123"
 }`
 
-- User login\  No authentication needed\  `{
+- User login<br/>  No authentication needed<br/>  `{
 	"email":"wali@email.com",
 	"password":"password123"
 }`
 
-- User refresh token\  Authorization header: Bearer Token + Acess Token from login endpoint\  `{
+- Join chat instance<br/>  Authentication needed. Non creator of chat instance joins<br/>  `{
+    "username": "wali"
+}`
+
+
+- User refresh token<br/>  Authorization header: Bearer Token + Acess Token from login endpoint<br/>  `{
     "email":"wali@email.com",
 	"password":"password123"   
 }`
 
-- Create chat instance\  Authentication needed\  `{
-
-}`
-
-- Join chat instance\  Authentication needed. Non creator of chat instance joins\  `{
-    "username": "wali"
-}`
-
-- Send message to chat instance\ Authentication needed. Must be a member of chat instance\  `{
+- Send message to chat instance<br/> Authentication needed. Must be a member of chat instance<br/>  `{
     "message": "Hello world"
 }`
+
+- Create chat instance<br/>  Authentication needed<br/>  `{ }`
