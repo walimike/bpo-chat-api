@@ -14,7 +14,6 @@ isort==4.3.21
 jwt==0.6.1
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
-pkg-resources==0.0.0
 psycopg2==2.8.4
 pycparser==2.20
 pylint==2.4.4
