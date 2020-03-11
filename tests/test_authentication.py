@@ -12,7 +12,7 @@ class Authentication(APITestCase):
                 "password": "password123",
                 "password2": "password123"}
 
-        response = self.client.post('/api/v1/user/', data, format='json')
+        response = self.client.post('/api/v1/users/signup/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_for_missing_username(self):
@@ -23,7 +23,7 @@ class Authentication(APITestCase):
                 "email": "akram@gmail.com",
                 "password": "password123",
                 "password2": "password123"}
-        response = self.client.post('/api/v1/user/', data, format='json')
+        response = self.client.post('/api/v1/users/signup/', data, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn("This field may not be blank.", str(response.data))
@@ -34,7 +34,7 @@ class Authentication(APITestCase):
         """
         data = {"user": {"username": "mukasa", "email": "", "password":
                 "akrammukasa"}}
-        response = self.client.post('/api/v1/user/', data, format='json')
+        response = self.client.post('/api/v1/users/signup/', data, format='json')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn("This field is required", str(response.data))
 
@@ -44,10 +44,10 @@ class Authentication(APITestCase):
                 "password": "password123",
                 "password2": "password123"}
 
-        response = self.client.post('/api/v1/user/', data, format='json')
+        response = self.client.post('/api/v1/users/signup/', data, format='json')
 
         data = {"email": "akram@gmail.com", 
                 "password": "password123"}
-        response = self.client.post('/api/v1/login/', data, format='json')
+        response = self.client.post('/api/v1/users/login/', data, format='json')
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
