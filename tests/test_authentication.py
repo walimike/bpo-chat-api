@@ -36,3 +36,7 @@ class TestAuthentication(BaseTest):
     def test_login(self):
         response = self.register_and_login() 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_hello_view(self):
+        response = self.client.get('/api/v1/users/hello/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)

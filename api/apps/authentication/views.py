@@ -31,7 +31,7 @@ class RegistrationAPIView(CreateAPIView):
         return Response(response_data, status=status.HTTP_201_CREATED)
    
 class HelloView(APIView):
-    permission_classes = (IsAuthenticated,)             
+    permission_classes = (AllowAny,)             
 
     def get(self, request):
         content = {'message': 'Hello, World!'}
