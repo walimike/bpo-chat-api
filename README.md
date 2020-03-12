@@ -1,5 +1,8 @@
-# bpo-chat-app-api
+# [bpo-chat-app-api](http://walimike.pythonanywhere.com/api/v1/users/hello/)
 - A Chat/Messaging App 
+
+##### API Demo
+http://walimike.pythonanywhere.com/api/v1/users/hello/
 
 ## Build status
 [![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)                    [![Maintainability](https://api.codeclimate.com/v1/badges/485ab8670a489a8b4bb4/maintainability)](https://codeclimate.com/github/walimike/bpo-chat-api/maintainability)                           [![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=add-test-coverage)](https://coveralls.io/github/walimike/bpo-chat-api?branch=add-test-coverage)
@@ -79,3 +82,5 @@
 }
 ```
 
+## Authors
+[Michael Robert Wali](https://www.linkedin.com/in/walimike/)
