@@ -5,7 +5,7 @@
 http://walimike.pythonanywhere.com/api/v1/users/hello/
 
 ## Build status
-[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)                   [![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=develop)](https://coveralls.io/github/walimike/bpo-chat-api?branch=develop)                          [![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=add-test-coverage)](https://coveralls.io/github/walimike/bpo-chat-api?branch=add-test-coverage)
+[![Build Status](https://travis-ci.org/walimike/bpo-chat-api.svg?branch=develop)](https://travis-ci.org/walimike/bpo-chat-api)                   [![Coverage Status](https://coveralls.io/repos/github/walimike/bpo-chat-api/badge.svg?branch=develop)](https://coveralls.io/github/walimike/bpo-chat-api?branch=develop)                        [![Maintainability](https://api.codeclimate.com/v1/badges/485ab8670a489a8b4bb4/maintainability)](https://codeclimate.com/github/walimike/bpo-chat-api/maintainability)
 
 ## Features
 1. Personal message
