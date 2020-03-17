@@ -83,7 +83,7 @@ class BaseTest(APITestCase):
             HTTP_AUTHORIZATION='Bearer ' + self.access_token())
         
         response = self.client.post('/api/v1/chats/',
-                                    {},
+                                    {"username":"akram"},
                                     format='json')
         return response
 
