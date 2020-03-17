@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import ListCreateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
@@ -7,13 +7,15 @@ from rest_framework.views import APIView
 
 
 from .serializers import RegistrationSerializer
+from .models import User
 
-class RegistrationAPIView(CreateAPIView):
+class RegistrationAPIView(ListCreateAPIView):
     """
     Allow any user (authenticated or not) to access this endpoint
     """
     permission_classes = (AllowAny,)
     serializer_class = RegistrationSerializer
+    queryset = User.objects.all()
 
     def post(self, request):
         user = self.request.data
