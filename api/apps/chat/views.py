@@ -1,7 +1,7 @@
 
 from django.contrib.auth import get_user_model
 from .models import (
-    ChatSession, ChatSessionMember, ChatSessionMessage, deserialize_user
+    ChatSession, ChatSessionMember, ChatSessionMessage, deserialize_user, deserialize_chats
 )
 
 from rest_framework.views import APIView
@@ -11,20 +11,39 @@ from rest_framework.permissions import  IsAuthenticated
 
 class ChatSessionView(APIView):
     """Manage Chat sessions."""
-
+    
     permission_classes = (IsAuthenticated,)
+
+    def get(self, request, *args, **kwargs):
+        User = get_user_model()
+        all_chats = []
+        user = request.user
+        chat_sessions = ChatSessionMember.objects.filter(user=user).values()
+        for chat_session in chat_sessions:
+            id = chat_session["chat_session_id"]
+            chat_instance =  ChatSession.objects.filter(id=id).values()
+            print(User.objects.filter(id=chat_instance[0]['owner_id']).values())
+
+            all_chats.append(chat_instance[0])
+
+        return Response({"message":all_chats})
 
     def post(self, request, *args, **kwargs):
         
         """create a new chat session."""
-        user = request.user
-        chat_session = ChatSession.objects.create(owner=user)
         User = get_user_model()
-
-        # uri = chat_session.uri
+        user = request.user
         username = request.data['username']
-        user = User.objects.get(username=username)
-
+        other_user = User.objects.get(username=username)
+        
+        try:
+            chat_session = ChatSession.objects.get(owner=user)
+        except ChatSession.DoesNotExist:
+            try:
+                chat_session = ChatSession.objects.get(owner=other_user)
+            except ChatSession.DoesNotExist:
+                chat_session = ChatSession.objects.create(owner=user)
+                chat_session.save()
         owner = chat_session.owner
 
         if owner != user:        
