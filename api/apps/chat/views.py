@@ -1,7 +1,7 @@
 
 from django.contrib.auth import get_user_model
 from .models import (
-    ChatSession, ChatSessionMember, ChatSessionMessage, deserialize_user, deserialize_chats
+    ChatSession, ChatSessionMember, ChatSessionMessage, deserialize_user
 )
 
 from rest_framework.views import APIView
@@ -69,9 +69,7 @@ class ChatSessionView(APIView):
         User = get_user_model()
 
         uri = kwargs['uri']
-        username = request.data['username']
-        user = User.objects.get(username=username)
-
+        user = User.objects.get(username=request.user.username)
         chat_session = ChatSession.objects.get(uri=uri)
         owner = chat_session.owner
 
